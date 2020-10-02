@@ -17,12 +17,23 @@ let amountInput = '';
 let newInput = '';
 let accountsList = [];
 const submit = document.querySelector('.submit');
+const next = document.querySelector('.next');
+// const checkName = function () {  
+//   for (var i = 0; i <= accountsList.length; i++)
+// }
 
-new_user.addEventListener('click', e => {
-  lineOne.innerHTML = 'Input Name in User 1 Box';
-  lineTwo.innerHTML = 'Initial Amount is 0.00';
-  lineThree.innerHTML = 'Then Click Submit Button';
-})
+// new_user.addEventListener('click', e => {
+//   lineOne.innerHTML = 'Input Name in User 1 Box';
+//   lineTwo.innerHTML = 'Initial Amount is 0.00';
+//   lineThree.innerHTML = 'Then Click Submit Button';
+//   submit.addEventListener('click', e => {  
+//     nameInput = userOne.value;
+//     newInput = new accountHolder(nameInput,amountInput);
+//     console.log(newInput);
+//     accountsList.push(newInput);
+//     console.log(accountsList);
+//   })
+// })
 
 existing_user.addEventListener('click', e =>{
   lineOne.innerHTML = 'Input Name in User 1 Box';
@@ -30,16 +41,64 @@ existing_user.addEventListener('click', e =>{
   lineThree.innerHTML = 'Then Click Submit Button';
 })
 
+// const checkName = function (userOne) {  
+//   for (var i = 0; i < accountsList.length; i++){
+//     if (userOne.value == accountsList[i].name) {
+//         return true;
+//         // newBalance = parseFloat(accountHolder.amount[i]) + parseFloat(amountInput);
+//         // updateAccount = this.amount.newBalance;
+//         // console.log(newBalance)
+//     }
+//     else { 
+//         return false;
+//       //   nameInput = userOne.value;
+//       //   amountInput = amountBox.value;
+//       //   newInput = new accountHolder(nameInput,amountInput);
+//       //   console.log(newInput);
+//       //   accountsList.push(newInput);
+//       //   console.log(accountsList);
+//     }  
+//   }
+// }
+
 deposit.addEventListener('click', e =>{
   lineOne.innerHTML = 'Input Name in User 1 Box';
   lineTwo.innerHTML = 'Input Deposit Amount in Amount Box';
-  lineThree.innerHTML = 'Then Click Submit Button';
+  lineThree.innerHTML = 'Then Click Deposit Button';
+  // userOne.add('');
+  // amountBox.add('');
+  for (var i = 0; i < accountsList.length; i++){
+    if (userOne.value === accountsList[i].name) {
+      let newBalance = parseFloat(accountsList[i].amount) + parseFloat(amountBox.value);
+      accountsList[i].amount = newBalance
+      console.log(accountsList[i])
+      lineOne.innerHTML = 'Account user' + ' ' + accountsList[i].name;
+      lineTwo.innerHTML = 'Has a new Balance of' + ' ' + newBalance;
+      lineThree.innerHTML = 'Can I help you with something else?';
+    }
+    else {  
+      // lineOne.innerHTML = 'That account does not exist';
+      // lineTwo.innerHTML = 'Input a new name in User 1 Box';
+      // lineThree.innerHTML = 'Input deposit amount in amount box. Click Deposit';
+    }  
+  }
 })
+
 
 withdraw.addEventListener('click', e =>{
   lineOne.innerHTML = 'Input Name in User 1 Box';
   lineTwo.innerHTML = 'Input Withdrawal Amount in Amount Box';
   lineThree.innerHTML = 'Then Click Submit Button';
+  for (var i = 0; i < accountsList.length; i++){
+    if (userOne.value === accountsList[i].name) {
+      let newBalance = parseFloat(accountsList[i].amount) - parseFloat(amountBox.value);
+      accountsList[i].amount = newBalance
+      console.log(accountsList[i])
+      lineOne.innerHTML = 'Account user' + ' ' + accountsList[i].name;
+      lineTwo.innerHTML = 'Has a new Balance of' + ' ' + newBalance;
+      lineThree.innerHTML = 'Can I help you with something else?';
+    }
+  }
 })
 
 transfer.addEventListener('click', e =>{
@@ -54,8 +113,6 @@ balance.addEventListener('click', e =>{
   lineThree.innerHTML = 'Then Click Submit Button';
 })
 
-
-
 submit.addEventListener('click', e => {  
     nameInput = userOne.value;
     amountInput = amountBox.value;
@@ -63,13 +120,10 @@ submit.addEventListener('click', e => {
     console.log(newInput);
     accountsList.push(newInput);
     console.log(accountsList);
-
-// var userType = document.getElementsByClassName('user-details');
-//   var serviceType = document.getElementsByClassName('services');
-  
-  // if (button === 'new-user') 
-  // display.innerHTML.firstChild = "Create a New User";
 })
 
-
-
+next.addEventListener('click', e =>{
+userOne.classList.remove();
+amountBox.classList.remove();
+userTwo.classList.remove();
+})

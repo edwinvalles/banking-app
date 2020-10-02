@@ -1,27 +1,66 @@
-/* @import url(https://fonts.adobe.com/fonts/interstate); */
-
 *{
     margin: 0;
     padding: 0;
 }
 
+h1 {
+    text-align: center;
+}
+.main-app {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
+    background-image: url(pexels-skitterphoto-36104.jpg);
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
 .display {
-    border: solid;
-    border-color: black;
+    border: 2px solid black;
     height: 60px;
-    width: 300px;
+    width: 400px;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.display-line{
+    list-style: none;
 }
 
 .input-fields {
     display: flex;
     flex-direction: column;
-    height: 30px;
-    width: 200px;
+}
+
+.input-fields, .user-details, .services, .refresh {
     padding-top: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .first-input, .second-input, .third-input {
     display: flex;
     flex-direction: row;
+    border: 2px solid gray;
+    border-radius: 10px;
+    height: 30px;
+    width: 180px;
+    place-items: center;
+    justify-content: space-around;
+}
+
+.user-buttons {
+    grid-template-columns: auto;
+}
+
+.users, .services {
+    text-align: center;
+    font-style: bold;
+}
+
+.next {
+    font-size: 150%;
 }
