@@ -5,26 +5,38 @@
 
 h1 {
     text-align: center;
+    font-size: 500%;
+    color: darkgreen;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
 }
+
 .main-app {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
-    background-image: url(pexels-skitterphoto-36104.jpg);
+    background-image: url(pexels-karolina-grabowska-4386158.jpg);
     width: auto;
     height: auto;
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    padding-bottom: 30px;
+}
+
+.app-frame {
+    background-color: rgb(244, 247, 244, 0.9);
 }
 
 .display {
-    border: 2px solid black;
-    height: 60px;
+    border: 2px solid gray;
+    height: 70px;
     width: 400px;
     align-items: center;
     justify-items: center;
     position: relative;
     text-align: center;
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif';
+    background-color: rgb(10, 10, 10, 0.9);
+    color: greenyellow;
+    padding-top: 5px;
 }
 
 .display-line{
@@ -34,6 +46,7 @@ h1 {
 .input-fields {
     display: flex;
     flex-direction: column;
+    place-items: center;
 }
 
 .input-fields, .user-details, .services, .refresh {
@@ -41,26 +54,54 @@ h1 {
     margin-top: 10px;
 }
 
-.first-input, .second-input, .third-input {
+.first-input, .second-input, .third-input, .submit, .next {
     display: flex;
     flex-direction: row;
-    border: 2px solid gray;
+    border: 2px solid darkgreen;
     border-radius: 10px;
     height: 30px;
     width: 180px;
     place-items: center;
+    align-content: center;
     justify-content: space-around;
+    margin-top: 5px;
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
 }
 
 .user-buttons {
-    grid-template-columns: auto;
+    display: inline-grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-gap: 5px;
+    padding-top: 10px;
+}
+
+.services-buttons {
+    display: inline-grid;
+    grid-template-columns: 75px 75px 75px 75px;
+    grid-gap: 5px;
+    padding-top: 10px;
+}
+
+.users-function, .services-function {
+    font-family: Verdana, 'Geneva', Tahoma, sans-serif;
+    font-weight: bold;
+    color: darkgreen;
+    border-radius: 5px;
+    font-size: 75%;
 }
 
 .users, .services {
     text-align: center;
     font-style: bold;
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+}
+
+.next, .submit {
+    font-size: 150%;
 }
 
 .next {
-    font-size: 150%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
 }

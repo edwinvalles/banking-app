@@ -10,50 +10,54 @@
     <!-- <img class="background" id="background" src="pexels-skitterphoto-36104.jpg" alt="" srcset=""> -->
     <div class="main-app">
         <h1 class="bank-name" id="bank-name">Win Bank</h1>
-    
-        <div class="display" id="display">
-            <ul>
-                <li class="display-line" id="line-one">Hello</li>
-                <li class="display-line" id="line-two">How can I help you today?</li>
-                <li class="display-line" id="line-three">Click on the users / services buttons below</li>
-            </ul>
-        </div>
-    
-        <div class="input-fields" id="input-fields">
-            <div class="first-input">
-                <input type="text" class="input" id="input-one" placeholder="Input User 1">
-                <!-- <button class="submit-one">+</div> -->
+        
+        <div class="app-frame"> 
+            <div class="display" id="display">
+                <ul>
+                    <li class="display-line" id="line-one">Welcome to Win Bank</li>
+                    <li class="display-line" id="line-two">How can I help you today?</li>
+                    <li class="display-line" id="line-three">Click on the users / services buttons to begin</li>
+                </ul>
             </div>
-            <div class="second-input">
-                <input type="number" class="input" id="input-two" placeholder="Input Amount 0.00">
-                <!-- <button class="submit-two">+</div> -->
+        
+            <div class="input-fields" id="input-fields">
+                <div class="first-input">
+                    <input type="text" onfocus="this.value=''" onclick="''" class="input" id="input-one" placeholder="Input User 1">
+                    <!-- <button class="submit-one">+</div> -->
+                </div>
+                <div class="second-input">
+                    <input type="number" onfocus="this.value=''" onclick="''" class="input" id="input-two" placeholder="Input Amount 0.00">
+                    <!-- <button class="submit-two">+</div> -->
+                </div>
+                <div class="third-input">
+                    <input type="text" onfocus="this.value=''" onclick="''" class="input" id="input-three" placeholder="Input User 2">
+                    <!-- <button class="submit-three">+</div> -->
+                </div>
+                <button class="submit">Submit</button>
             </div>
-            <div class="third-input">
-                <input type="text" class="input" id="input-three" placeholder="Input User 2">
-                <!-- <button class="submit-three">+</div> -->
-            </div>
-            <button class="submit">Submit</button>
-        </div>
 
-        <div class="user-details">
-            <p class="users" id="users"><strong>Users</strong></p>
-            <div class="user-buttons">
-                <button class="users-function" id="new_user">New User</button>
-                <button class="users-function" id="existing_user">Existing User</button>
-                <button class="users-function" id="all_users">All Users</button>
+            <div class="user-details">
+                <p class="users" id="users">Users</p>
+                <div class="user-buttons">
+                    <button class="users-function" id="new_user">New User</button>
+                    <button class="users-function" id="existing_user">Existing User</button>
+                    <button class="users-function" id="all_users">All Users</button>
+                </div>
             </div>
-        </div>
-    
-        <div>
-            <p class="services" id="services"><strong>Services</strong></p>
-            <button class="services-function" id="deposit">Deposit</button>
-            <button class="services-function" id="withdraw">Withdraw</button>
-            <button class="services-function" id="transfer">Transfer</button>
-            <button class="services-function" id="balance">Get Balance</button>
-        </div>
+        
+            <div>
+                <p class="services" id="services">Services</p>
+                <div class="services-buttons">
+                    <button class="services-function" id="deposit">Deposit</button>
+                    <button class="services-function" id="withdraw">Withdraw</button>
+                    <button class="services-function" id="transfer">Transfer</button>
+                    <button class="services-function" id="balance">Get Balance</button>
+                </div>
+            </div>
 
-        <div class="refresh">
-            <button class="next">Next</button>
+            <div class="refresh">
+                <button class="next">Next</button>
+            </div>
         </div>
     </div>
     <script src="bankingApp.js"></script>

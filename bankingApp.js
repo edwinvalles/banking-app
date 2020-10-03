@@ -22,23 +22,34 @@ const next = document.querySelector('.next');
 //   for (var i = 0; i <= accountsList.length; i++)
 // }
 
-// new_user.addEventListener('click', e => {
-//   lineOne.innerHTML = 'Input Name in User 1 Box';
-//   lineTwo.innerHTML = 'Initial Amount is 0.00';
-//   lineThree.innerHTML = 'Then Click Submit Button';
-//   submit.addEventListener('click', e => {  
-//     nameInput = userOne.value;
-//     newInput = new accountHolder(nameInput,amountInput);
-//     console.log(newInput);
-//     accountsList.push(newInput);
-//     console.log(accountsList);
-//   })
-// })
+new_user.addEventListener('click', e => {
+  lineOne.innerHTML = 'Input name in User 1 Box';
+  lineTwo.innerHTML = 'Initial amount is 0.00';
+  lineThree.innerHTML = 'Then click New User button';
+  amountBox.disabled = true;
+  userTwo.disabled = true;
+  nameInput = userOne.value;
+  amountInput = 0.00;
+  newInput = new accountHolder(nameInput,amountInput);
+    console.log(newInput);
+    accountsList.push(newInput);
+    console.log(accountsList);
+  userOne.value = '';
+})
 
 existing_user.addEventListener('click', e =>{
-  lineOne.innerHTML = 'Input Name in User 1 Box';
+  lineOne.innerHTML = 'Input name in User 1 Box';
   lineTwo.innerHTML = '';
-  lineThree.innerHTML = 'Then Click Submit Button';
+  lineThree.innerHTML = 'Then click Submit Button';
+  amountBox.disabled = true;
+  userTwo.disabled = true;
+  for (var i = 0; i < accountsList.length; i++){
+    if (userOne.value === accountsList[i].name) {
+      lineOne.innerHTML = 'Account user' + ' ' + accountsList[i].name;
+      lineTwo.innerHTML = 'Has a balance of' + ' ' + accountsList[i].amount;
+      lineThree.innerHTML = 'Can I help you with something else?';
+    }
+  }
 })
 
 // const checkName = function (userOne) {  
@@ -65,12 +76,12 @@ deposit.addEventListener('click', e =>{
   lineOne.innerHTML = 'Input Name in User 1 Box';
   lineTwo.innerHTML = 'Input Deposit Amount in Amount Box';
   lineThree.innerHTML = 'Then Click Deposit Button';
-  // userOne.add('');
-  // amountBox.add('');
+  amountBox.disabled = false;
+  userTwo.disabled = true;
   for (var i = 0; i < accountsList.length; i++){
     if (userOne.value === accountsList[i].name) {
       let newBalance = parseFloat(accountsList[i].amount) + parseFloat(amountBox.value);
-      accountsList[i].amount = newBalance
+      accountsList[i].amount = newBalance;
       console.log(accountsList[i])
       lineOne.innerHTML = 'Account user' + ' ' + accountsList[i].name;
       lineTwo.innerHTML = 'Has a new Balance of' + ' ' + newBalance;
@@ -82,6 +93,8 @@ deposit.addEventListener('click', e =>{
       // lineThree.innerHTML = 'Input deposit amount in amount box. Click Deposit';
     }  
   }
+  userOne.value = '';
+  amountBox.value = '';
 })
 
 
@@ -89,6 +102,8 @@ withdraw.addEventListener('click', e =>{
   lineOne.innerHTML = 'Input Name in User 1 Box';
   lineTwo.innerHTML = 'Input Withdrawal Amount in Amount Box';
   lineThree.innerHTML = 'Then Click Submit Button';
+  amountBox.disabled = false;
+  userTwo.disabled = true;
   for (var i = 0; i < accountsList.length; i++){
     if (userOne.value === accountsList[i].name) {
       let newBalance = parseFloat(accountsList[i].amount) - parseFloat(amountBox.value);
@@ -105,12 +120,24 @@ transfer.addEventListener('click', e =>{
   lineOne.innerHTML = 'Input Transferer Name in User 1 Box';
   lineTwo.innerHTML = 'Input Withdrawal Amount in Amount Box';
   lineThree.innerHTML = 'Input Transferee Name in User 2 Box. Submit.';
+  amountBox.disabled = false;
+  userTwo.disabled = false;
 })
 
 balance.addEventListener('click', e =>{
   lineOne.innerHTML = 'Input Name in User 1 Box';
   lineTwo.innerHTML = '';
-  lineThree.innerHTML = 'Then Click Submit Button';
+  lineThree.innerHTML = 'Then click Submit Button';
+  amountBox.disabled = true;
+  userTwo.disabled = true;
+  for (var i = 0; i < accountsList.length; i++){
+    if (userOne.value === accountsList[i].name) {
+      lineOne.innerHTML = 'Account user' + ' ' + accountsList[i].name;
+      lineTwo.innerHTML = 'Has a new Balance of' + ' ' + accountsList[i].amount;
+      lineThree.innerHTML = 'Can I help you with something else?';
+    }
+  }
+  userOne.value = '';
 })
 
 submit.addEventListener('click', e => {  
