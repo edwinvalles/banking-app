@@ -8,6 +8,7 @@ h1 {
     font-size: 500%;
     color: darkgreen;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    text-shadow: rgb(228, 215, 215);
 }
 
 .main-app {
@@ -18,11 +19,11 @@ h1 {
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    padding-bottom: 30px;
+    padding-bottom: 100px;
 }
 
 .app-frame {
-    background-color: rgb(244, 247, 244, 0.9);
+    background-color: rgba(222, 243, 222, 0.95);
 }
 
 .display {
@@ -49,12 +50,12 @@ h1 {
     place-items: center;
 }
 
-.input-fields, .user-details, .services, .refresh {
+.input-fields, .user-details, .services {
     padding-top: 10px;
     margin-top: 10px;
 }
 
-.first-input, .second-input, .third-input, .submit, .next {
+.first-input, .second-input, .third-input, .submit {
     display: flex;
     flex-direction: row;
     border: 2px solid darkgreen;
@@ -69,25 +70,39 @@ h1 {
 }
 
 .user-buttons {
-    display: inline-grid;
+    /* display: inline-grid;
     grid-template-columns: 100px 100px 100px;
-    grid-gap: 5px;
-    padding-top: 10px;
+    grid-gap: 5px; */
+    display: flex;
+    flex-direction: column;
+    padding-top: 5px;
+    color: gray;
 }
 
 .services-buttons {
-    display: inline-grid;
+    /* display: inline-grid;
     grid-template-columns: 75px 75px 75px 75px;
-    grid-gap: 5px;
+    grid-gap: 5px; */
+    display: flex;
+    flex-direction: column;
     padding-top: 10px;
+    padding-bottom: 5px;
+    height: 20px;
+    align-content: space-around;
 }
 
 .users-function, .services-function {
     font-family: Verdana, 'Geneva', Tahoma, sans-serif;
-    font-weight: bold;
     color: darkgreen;
     border-radius: 5px;
-    font-size: 75%;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.users-function:hover, .services-function:hover, .submit:hover {
+    cursor: pointer;
+    color: darkred;
+    background-color: lightyellow;
 }
 
 .users, .services {
@@ -96,12 +111,13 @@ h1 {
     font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
 }
 
-.next, .submit {
-    font-size: 150%;
+/* .next,  */
+.submit {
+    font-size: 120%;
 }
 
-.next {
+/* .next {
     display: flex;
     justify-items: center;
     align-items: center;
-}
+} */
